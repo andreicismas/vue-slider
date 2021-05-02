@@ -1,6 +1,13 @@
 const app = new Vue({
     el: "#root_app",
     data: {
+        arrowsChecked: addEventListener("keydown", function (checked) {
+            if (checked.key == "ArrowRight") {
+                app.rightClick();
+            } else if (checked.key == "ArrowLeft") {
+                app.leftClick();
+            }
+        }),
         myImages: [
             "https://picsum.photos/600/500",
             "https://picsum.photos/id/237/600/500",
@@ -16,9 +23,22 @@ const app = new Vue({
         ],
 
         imageCounter: 0,
+        counter: null,
 
     },
     methods: {
+
+        autoSlide() {
+            this.imageCounter += 1;
+            if (this.imageCounter % 2 !== 0) {
+                this.counter = setInterval(this.rightClick, 2000);
+            } else {
+                clearInterval(this.counter)
+            }
+
+        },
+
+
         dotCecked(element) {
             this.imageCounter = element;
         },
