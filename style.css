@@ -5,6 +5,7 @@
 }
 
 .max_container {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +14,6 @@
 .img_container {
     width: 600px;
     height: 500px;
-    background-color: brown;
     border-radius: 10px;
     display: flex;
     justify-content: flex-end;
@@ -30,11 +30,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px;
 }
 
 .dot_container {
-    background-color: rgba(0, 0, 0, 0.589);
-    padding: 8px;
     margin-bottom: 10px;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.dot>i {
+    padding: 5px;
+}
+
+.fa-circle.active {
+    color: blue;
+}
+
+.img_container img {
     border-radius: 10px;
 }
